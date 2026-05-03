@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>College Event Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
+
+<div class="container">
+
+    <h1>🎓 College Event Manager</h1>
+
+    <div class="form-container">
+      <button class="add-btn" onclick="openModal()">+ Add Event</button>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Add Event</h2>
+    
+    <input type="text" id="eventName" placeholder="Event Name">
+    <input type="date" id="eventDate">
+    <input type="text" id="eventLocation" placeholder="Location">
+    
+    <button onclick="addEvent()">Save</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+    </div>
+
+    <input type="text" id="search" placeholder="🔍 Search event..." onkeyup="searchEvent()">
+
+    <div id="eventList"></div>
+
+</div>
+
+</body>
+</html>
+<script src="script.js"></script>
