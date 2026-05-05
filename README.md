@@ -1,6 +1,6 @@
 # 🎓 College Event Manager (Pro Version)
 
-🚀 Live Demo: https://theaditya01.github.io/college-event-manager/
+🚀 Live Demo:  https://theaditya01.github.io/event-management/
 
 A modern and interactive frontend web application to manage college events efficiently. This project demonstrates complete CRUD operations with advanced UI/UX features, built using HTML, CSS, and JavaScript.
 
