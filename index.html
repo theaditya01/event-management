@@ -5,6 +5,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div class="header">
+    <h1>🎓 Event Manager</h1>
+    <div class="stats">
+        <div>Total: <span id="totalCount">0</span></div>
+        <div>Upcoming: <span id="upcomingCount">0</span></div>
+        <div>Completed: <span id="completedCount">0</span></div>
+    </div>
+</div>
     <button onclick="toggleDarkMode()">🌙 Toggle Mode</button>
 
 <div class="container">
@@ -17,10 +26,17 @@
 <div id="modal" class="modal">
   <div class="modal-content">
     <h2>Add Event</h2>
+    <span class="tag ${tagClass}">${event.category}</span>
     
     <input type="text" id="eventName" placeholder="Event Name">
     <input type="date" id="eventDate">
     <input type="text" id="eventLocation" placeholder="Location">
+
+    <select id="eventCategory">
+    <option value="Technical">Technical</option>
+    <option value="Cultural">Cultural</option>
+    <option value="Sports">Sports</option>
+</select>
     
     <button onclick="addEvent()">Save</button>
     <button onclick="closeModal()">Cancel</button>
@@ -29,10 +45,33 @@
     </div>
 
     <input type="text" id="search" placeholder="🔍 Search event..." onkeyup="searchEvent()">
+    <select id="filterStatus" onchange="applyFilters()">
+  <option value="all">All</option>
+  <option value="upcoming">Upcoming</option>
+  <option value="completed">Completed</option>
+</select>
+
+<select id="filterCategory" onchange="applyFilters()">
+  <option value="all">All Categories</option>
+  <option value="Technical">Technical</option>
+  <option value="Cultural">Cultural</option>
+  <option value="Sports">Sports</option>
+</select>
+
+<select onchange="sortEvents(this.value)">
+  <option value="newest">Newest</option>
+  <option value="oldest">Oldest</option>
+</select>
 
     <div id="eventList"></div>
 
 </div>
+<div id="toast" class="toast"></div>
+<footer>
+    <p>Made by Aditya Singh | B.Tech CSE</p>
+</footer>
+
+<div id="loader" class="loader"></div>
 
 </body>
 </html>
